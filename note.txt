@@ -1,0 +1,36 @@
+Template
+- Nav
+- Content
+- Footer
+
+Home
+- Hero
+- Tech
+- Projects
+- Exp
+- CTA (quick Resume download or next page)
+
+About
+- Intro (who am I)
+- Journey (Timeline)
+
+Projects
+- Intro (Tech Stack)
+- List 
+
+Contact
+- Intro (Get in touch)
+- Social Links + Resume
+
+More...
+
+Hobbies (& Interests)
+- Intro
+- Personal Hobbies
+- Dream
+
+Blog (Comming Soon)
+- Intro
+- List
+
+blog ideas => some doc in mm version.

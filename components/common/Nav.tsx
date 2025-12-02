@@ -24,6 +24,8 @@ export function Nav() {
     { name: "About", link: "/about" },
     { name: "Projects", link: "/projects" },
     { name: "Contact", link: "/contact" },
+    // { name: "Blog", link: "/more/blog" },
+    // { name: "Hobbies", link: "/more/hobbies" },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
