@@ -5,7 +5,6 @@ import { ThemeProvider } from "@/components/provider/theme-provider";
 import { Nav } from "@/components/common/Nav";
 import React from "react";
 import Footer from "@/components/common/Footer";
-import { LightRays } from "@/components/ui/light-rays";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden font-mono`}
       >
         <ThemeProvider
           attribute="class"
@@ -41,7 +40,6 @@ export default function RootLayout({
           // disableTransitionOnChange
         >
           <Nav />
-          <LightRays />
           {children}
           <Footer />
         </ThemeProvider>

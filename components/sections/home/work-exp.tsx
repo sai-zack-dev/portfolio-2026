@@ -1,13 +1,15 @@
+import Header from "@/components/common/Header";
+import { Timeline9 } from "@/components/ui/timeline9";
+
 export default function WorkExp() {
   return (
-    <main className="flex min-h-screen w-full max-w-4xl items-center justify-center bg-white dark:bg-black sm:items-start mx-auto py-24 h-screen">
-      <div className="w-full h-full bg-amber-100 justify-center flex flex-col items-center">
-        <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-          Work Experience Section
-        </h1>
-        <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-          This is the Work Experience Section.
-        </p>
+    <main className="flex min-h-screen w-full sm:items-start py-24 flex-col">
+      <div className="w-full h-full p-5 max-w-4xl mx-auto">
+        <Header
+          title="Work_Experience"
+          description="I've been working on --- for the past 2 years. Here's a timeline of my journey."
+        />
+        <Timeline9 />
       </div>
     </main>
   );

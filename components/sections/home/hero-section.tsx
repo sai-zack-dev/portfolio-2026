@@ -1,50 +1,32 @@
-import { AuroraText } from "@/components/ui/aurora-text";
-import { PixelatedCanvas } from "@/components/ui/pixelated-canvas";
 import { MorphingText } from "@/components/ui/morphing-text";
-import { RainbowButton } from "@/components/ui/rainbow-button";
-
+import { heroTitles } from "@/data/titles";
+import { FlickeringGrid } from "@/components/ui/flickering-grid";
 export default function HeroSection() {
   return (
-    <>
-      <div className="flex min-h-screen w-full max-w-4xl items-center justify-center mx-auto py-24 h-screen flex-col sm:flex-row">
-        <div className="w-full h-full justify-center items-center flex p-5">
-          <PixelatedCanvas
-            src="/frame.png"
-            width={400}
-            height={400}
-            shape="circle"
-            backgroundColor="#ffffff00"
-            responsive
-            tintColor="#666666"
-            distortionMode="swirl"
-            tintStrength={0.5}
-            className="rounded-xl z-10"
-          />
-        </div>
-        <div className="w-full h-full justify-center items-start flex flex-col p-5 gap-3 z-2">
-          <p className="text-sm text-gray-700 dark:text-gray-300">
-            {" "}
-            Hello, It's me.
+    <main className="w-full h-full flex items-center justify-center">
+      <FlickeringGrid
+        className="absolute inset-0 z-0 size-full mask-b-from-50% mask-t-from-50% mask-radial-[50%_90%] mask-radial-from-80%"
+        squareSize={5}
+        gridGap={10}
+        color="#00C660"
+        maxOpacity={0.5}
+        flickerChance={0.1}
+      />
+      <div className="text-xs sm:text-sm md:text-base flex min-h-screen max-w-4xl mx-auto py-24 flex-col w-full h-full justify-center items-start p-5 gap-3">
+          <p className="text-gray-700 dark:text-gray-300">
+            {heroTitles.greeting}
           </p>
-          <AuroraText className="text-6xl font-bold">
-            {" "}
-            &lt; Sai Zack /&gt;
-          </AuroraText>
-          {/* <h1 className="text-6xl font-bold text-black dark:text-white"> &lt; Sai Zack /&gt;</h1> */}
-          <div className="flex gap-1 text-2xl font-bold text-gray-800 dark:text-gray-200">
-            <h1>Software</h1>
-            <MorphingText
-              texts={["Engineer", "Developer", "Architecture", "Designer"]}
-            />
+          <h1 className="text-4xl sm:text-7xl font-semibold">{heroTitles.name}</h1>
+
+          <div className="flex gap-1 text-xl sm:text-3xl font-semibold text-gray-800 dark:text-gray-200">
+            <h1>{heroTitles.rolePrefix}</h1>
+            <MorphingText texts={heroTitles.roles} />
           </div>
-          <p className="text-sm text-gray-700 dark:text-gray-300 max-w-md mb-4">
-            I build web, mobile, and desktop solutions in JavaScript and PHP,
-            along with supporting UI/UX work. I deliver complete,
-            production-ready applications from idea to launch.
+
+          <p className="text-gray-700 dark:text-gray-300 max-w-2xl mb-4">
+            {heroTitles.description}
           </p>
-          <RainbowButton variant="outline">Download Resume</RainbowButton>
-        </div>
       </div>
-    </>
+    </main>
   );
 }

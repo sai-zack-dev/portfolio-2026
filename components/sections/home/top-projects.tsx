@@ -23,7 +23,7 @@ export default function TopProjects() {
   return (
     <main className="flex min-h-screen w-full sm:items-start py-24 flex-col">
       <div className="w-full h-full p-5 max-w-4xl mx-auto">
-         <Header title="Feature Projects" description="I&apos;ve been working on Aceternity for the past 2 years. Here&apos;s a timeline of my journey." />
+         <Header title="Featured_Projects" description="I&apos;ve been working on --- for the past 2 years. Here&apos;s a timeline of my journey." />
       </div>
       <div className="relative w-full h-full">
         <Carousel slides={slideData} />
