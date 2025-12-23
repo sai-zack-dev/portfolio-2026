@@ -1,6 +1,6 @@
 export default function SocialLinks() {
   return (
-    <div className="w-full h-full bg-red-100 justify-center flex flex-col items-center">
+    <div className="w-full bg-red-100 justify-center flex flex-col items-center">
       <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
         Contact Page - Social Links
       </h1>

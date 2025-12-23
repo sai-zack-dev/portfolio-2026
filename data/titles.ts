@@ -28,3 +28,9 @@ export const contactTitles = {
   intro:
     "Have a project in mind, a question, or just want to say hi? My inbox is always open.",
 };
+
+export const contactFormTitles = {
+  title: "Let’s Work Together",
+  description:
+    "Have a project in mind, a question, or just want to say hello? Fill out the form below and I’ll get back to you as soon as possible.",
+};
