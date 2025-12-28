@@ -9,6 +9,7 @@ export default function WorkExp() {
         <Header
           title="Work_Experience"
           description="I've been working across design and software development for the past few years. Here's a timeline of my journey."
+          prefix="#"
         />
 
         <Timeline9 items={experiences} />

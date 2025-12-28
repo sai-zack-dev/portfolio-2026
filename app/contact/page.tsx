@@ -1,11 +1,72 @@
-import ContactForm from "@/components/sections/contact/form";
-import SocialLinks from "@/components/sections/contact/social-links";
+"use client";
+import React from "react";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
+import { Textarea } from "@/components/ui/textarea";
+import { contactFormTitles } from "@/data/titles";
+import Header from "@/components/common/Header";
 
 export default function Contact() {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted");
+  };
   return (
-    <div className="flex w-full max-w-7xl items-center justify-center bg-white dark:bg-black sm:items-start mx-auto pt-24">
-      <SocialLinks />
-      <ContactForm />
-    </div>
+    <main className="flex flex-col w-full max-w-4xl items-center justify-center sm:items-start mx-auto mt-14 p-5">
+      <Header
+        title={contactFormTitles.title}
+        description={contactFormTitles.description}
+      />
+      <form className="my-8 flex flex-col gap-5 w-full" onSubmit={handleSubmit}>
+        <LabelInputContainer>
+          <Label htmlFor="name">Name</Label>
+          <Input id="name" placeholder="Enter your name" type="text" />
+        </LabelInputContainer>
+        <LabelInputContainer>
+          <Label htmlFor="email">Email</Label>
+          <Input
+            id="email"
+            placeholder="Enter your email address"
+            type="email"
+          />
+        </LabelInputContainer>
+        <LabelInputContainer>
+          <Label htmlFor="email">Message</Label>
+          <Textarea placeholder="Your message to me..." />
+        </LabelInputContainer>
+
+        <button
+          className="group/btn relative block h-10 w-full rounded-md bg-linear-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] cursor-pointer"
+          type="submit"
+        >
+          Send Message &rarr;
+          <BottomGradient />
+        </button>
+      </form>
+    </main>
   );
 }
+
+const BottomGradient = () => {
+  return (
+    <>
+      <span className="absolute inset-x-0 -bottom-px block h-px w-full bg-linear-to-r from-transparent via-blue-500 to-transparent opacity-0 transition duration-500 group-hover/btn:opacity-100" />
+      <span className="absolute inset-x-10 -bottom-px mx-auto block h-px w-1/2 bg-linear-to-r from-transparent via-indigo-500 to-transparent opacity-0 blur-sm transition duration-500 group-hover/btn:opacity-100" />
+    </>
+  );
+};
+
+const LabelInputContainer = ({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("flex w-full flex-col space-y-2", className)}>
+      {children}
+    </div>
+  );
+};

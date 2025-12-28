@@ -1,7 +1,6 @@
 export default function ProjectList() {
   return (
-    <main className="flex min-h-screen w-full max-w-4xl items-center justify-center bg-white dark:bg-black sm:items-start mx-auto py-24 h-screen">
-      <div className="w-full h-full bg-amber-100 justify-center flex flex-col items-center">
+      <div className="w-full min-h-screen bg-amber-100 justify-center flex flex-col items-center">
         <h1 className="text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
           Project List Section
         </h1>
@@ -9,6 +8,5 @@ export default function ProjectList() {
           This is the Project List Section.
         </p>
       </div>
-    </main>
   );
 }

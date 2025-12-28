@@ -97,8 +97,8 @@ const Folder: React.FC<FolderProps> = ({
   const scaleStyle = { transform: `scale(${size})` };
 
   const getOpenTransform = (index: number) => {
-    if (index === 0) return "translate(-120%, -70%) rotate(-15deg)";
-    if (index === 1) return "translate(10%, -70%) rotate(15deg)";
+    if (index === 0) return "translate(-150%, -70%) rotate(-15deg)";
+    if (index === 1) return "translate(50%, -70%) rotate(15deg)";
     if (index === 2) return "translate(-50%, -100%) rotate(5deg)";
     return "";
   };

@@ -30,7 +30,8 @@ export const contactTitles = {
 };
 
 export const contactFormTitles = {
-  title: "Let’s Work Together",
+  title: "Let’s Build Something Great",
   description:
     "Have a project in mind, a question, or just want to say hello? Fill out the form below and I’ll get back to you as soon as possible.",
+
 };

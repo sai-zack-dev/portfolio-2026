@@ -23,6 +23,7 @@ export default function TechStack() {
         <Header
           title="Tech_Stack"
           description="I've been working with these technologies for the past 4 years."
+          prefix="#"
         />
 
         <div className="grid md:grid-cols-2 w-full gap-5 py-5">

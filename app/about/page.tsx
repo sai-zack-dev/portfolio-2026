@@ -1,16 +1,14 @@
-import AboutMe from "@/components/sections/about/about-me";
-import CurrentStatus from "@/components/sections/about/current-status";
+import Header from "@/components/common/Header";
 import Hobbies from "@/components/sections/about/hobbies";
 import Journey from "@/components/sections/about/journey";
 
 export default function About() {
   return (
-    <main className="flex min-h-screen w-full flex-col items-center justify-centerbg-white dark:bg-black sm:items-start">
-      {/* Page Content */}
-      <div className="flex min-h-screen w-full max-w-7xl items-center justify-center bg-white dark:bg-black sm:items-start mx-auto py-24 h-screen">
-        <AboutMe />
-        <CurrentStatus />
-      </div>
+    <main className="flex flex-col w-full max-w-4xl items-center justify-center sm:items-start mx-auto mt-14 p-5">
+      <Header
+        title="Walk Through My Tech Journey"
+        description="Learn more about my education, experience, and experties in the tech industry by timeline. My journey from beginner to professional"
+      />
       <Journey />
       <Hobbies />
     </main>

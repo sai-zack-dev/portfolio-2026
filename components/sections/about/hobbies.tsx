@@ -1,14 +1,18 @@
+"use client";
+
+import { useState } from "react";
 import Folder from "@/components/ui/folder";
 import BounceCards from "@/components/ui/bounce-cards";
+import Header from "@/components/common/Header";
+import { CgGym } from "react-icons/cg";
+import { LiaUtensilsSolid } from "react-icons/lia";
+import { IoAirplaneOutline } from "react-icons/io5";
+
+type Hobby = "gym" | "cooking" | "travel" | null;
 
 export default function Hobbies() {
-  const images = [
-    "https://picsum.photos/400/400?grayscale",
-    "https://picsum.photos/500/500?grayscale",
-    "https://picsum.photos/600/600?grayscale",
-    "https://picsum.photos/700/700?grayscale",
-    "https://picsum.photos/300/300?grayscale",
-  ];
+  const [selectedHobby, setSelectedHobby] = useState<Hobby>(null);
+  const [images, setImages] = useState<string[]>([]);
 
   const transformStyles = [
     "rotate(5deg) translate(-150px)",
@@ -17,22 +21,99 @@ export default function Hobbies() {
     "rotate(5deg) translate(70px)",
     "rotate(-5deg) translate(150px)",
   ];
+
+  const hobbyImages: Record<Exclude<Hobby, null>, string[]> = {
+    gym: [
+      "https://picsum.photos/400/400?gym",
+      "https://picsum.photos/500/500?fitness",
+      "https://picsum.photos/600/600?workout",
+      "https://picsum.photos/700/700?training",
+      "https://picsum.photos/300/300?muscle",
+    ],
+    cooking: [
+      "https://picsum.photos/400/400?food",
+      "https://picsum.photos/500/500?cooking",
+      "https://picsum.photos/600/600?kitchen",
+      "https://picsum.photos/700/700?chef",
+      "https://picsum.photos/300/300?recipe",
+    ],
+    travel: [
+      "https://picsum.photos/400/400?travel",
+      "https://picsum.photos/500/500?plane",
+      "https://picsum.photos/600/600?beach",
+      "https://picsum.photos/700/700?mountain",
+      "https://picsum.photos/300/300?city",
+    ],
+  };
+
+  const handleHobbiesClick = (hobby: Exclude<Hobby, null>) => {
+    setSelectedHobby(hobby);
+    setImages(hobbyImages[hobby]);
+  };
+
+  const items: React.ReactNode[] = [
+    <button
+      key="gym"
+      className="text-black flex gap-1 justify-center items-center text-xs w-full h-full"
+      onClick={() => handleHobbiesClick("gym")}
+    >
+      <CgGym />
+      Gym
+    </button>,
+    <button
+      key="cooking"
+      className="text-black flex gap-1 justify-center items-center text-xs w-full h-full"
+      onClick={() => handleHobbiesClick("cooking")}
+    >
+      <LiaUtensilsSolid />
+      Cooking
+    </button>,
+    <button
+      key="travel"
+      className="text-black flex gap-1 justify-center items-center text-xs w-full h-full"
+      onClick={() => handleHobbiesClick("travel")}
+    >
+      <IoAirplaneOutline />
+      Travel
+    </button>,
+  ];
+
   return (
-    <main className="flex min-h-screen w-full max-w-4xl items-center justify-center bg-white dark:bg-black sm:items-start mx-auto py-24 h-screen">
-      <div className="w-full h-full bg-purple-100 justify-center flex flex-col items-center gap-10">
-        <Folder size={2} color="#5227FF" className="custom-folder" />
+    <div className="w-full h-full justify-center flex flex-col items-center py-24">
+      <Header
+        title="Know More About Me"
+        description="Here is my hobbies and interests outside of coding and technology."
+      />
+
+      <div className="relative flex justify-center w-full my-50">
+        <Folder
+          size={2}
+          color="#008CFA"
+          className="custom-folder"
+          items={items}
+        />
+        <p className="text-white absolute -bottom-25 text-lg">
+          Personal Hobbies
+        </p>
+        <p className="absolute -bottom-30 text-sm text-blue-400">
+          3 items
+        </p>
+      </div>
+
+      {selectedHobby && (
         <BounceCards
+          key={selectedHobby} // forces re-animation on change
           className="custom-bounceCards"
           images={images}
           containerWidth={500}
           containerHeight={250}
-          animationDelay={1}
-          animationStagger={0.3}
+          animationDelay={0.5}
+          animationStagger={0.25}
           easeType="elastic.out(1, 0.5)"
           transformStyles={transformStyles}
           enableHover={true}
         />
-      </div>
-    </main>
+      )}
+    </div>
   );
 }
