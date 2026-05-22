@@ -1,0 +1,2 @@
+:HL["/sai-zack-portfolio/_next/static/chunks/917cd223f345d024.css","style"]
+0:{"buildId":"zkCEb4Jw56u3U96QXQDoi","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"/_not-found","paramType":null,"paramKey":"/_not-found","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
