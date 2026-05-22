@@ -12,24 +12,18 @@ export const heroTitles = {
 };
 
 export const aboutTitles = {
-  heroTitle: "About Me",
-  intro:
-    "I’m a software engineer who enjoys turning complex problems into simple, elegant solutions. I focus on building scalable, maintainable products with strong UX foundations.",
+  title: "Walk Through My Tech Journey",
+  description:
+    "Learn more about my education, experience, and experties in the tech industry by timeline. My journey from beginner to professional",
 };
 
 export const projectsTitles = {
-  heroTitle: "Projects",
-  intro:
-    "A selection of my work across web, mobile, and experimental tools — from concept to production-ready systems.",
+  title: "Projects That Reflect My Passion",
+  description:
+    "Discover the projects that highlight my journey in tech, from experimental ideas to real-world applications crafted with passion and precision.",
 };
 
 export const contactTitles = {
-  heroTitle: "Get In Touch",
-  intro:
-    "Have a project in mind, a question, or just want to say hi? My inbox is always open.",
-};
-
-export const contactFormTitles = {
   title: "Let’s Build Something Great",
   description:
     "Have a project in mind, a question, or just want to say hello? Fill out the form below and I’ll get back to you as soon as possible.",

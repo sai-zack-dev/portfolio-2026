@@ -1,5 +1,3 @@
-// data/experience.ts
-
 export type ExperienceItem = {
   date: string;
   title: string;
@@ -15,23 +13,23 @@ export const experiences: ExperienceItem[] = [
     company: "Self-employed",
     location: "Remote",
     content:
-      "Building and delivering full-stack applications for clients using modern web technologies. Responsible for system architecture, development, deployment, and UI/UX decisions.",
+      "Delivering full-stack web applications with focus on scalable architecture, modern UI/UX, and end-to-end product development using React, Next.js, Node.js, and Laravel ecosystems.",
   },
   {
     date: "2022 – 2024",
     title: "Full-stack Software Engineer",
-    company: "Myanmar Software Integrated Solutions",
+    company: "Myanmar Software Integrated Solutions (MSIS)",
     location: "Yangon, Myanmar",
     content:
-      "Worked on production-grade web applications, contributing to both frontend and backend systems. Focused on performance, maintainability, and scalable architecture.",
+      "Developed enterprise-grade web platforms using Laravel, React, and REST APIs, contributing to systems serving 500+ users while handling frontend, backend, deployment, and production maintenance.",
   },
   {
     date: "Early 2022",
-    title: "Solution Architect Intern",
-    company: "Myanmar Software Integrated Solutions",
+    title: "Solution Architect & Quality Assurance Intern",
+    company: "Myanmar Software Integrated Solutions (MSIS)",
     location: "Yangon, Myanmar",
     content:
-      "Assisted in designing system architectures, translating business requirements into technical solutions, and supporting senior engineers in implementation planning.",
+      "Supported ERP solution planning, client workflow analysis, and enterprise application testing while collaborating with development teams on system requirements, quality assurance, and implementation processes.",
   },
   {
     date: "Before 2022",
@@ -39,6 +37,6 @@ export const experiences: ExperienceItem[] = [
     company: "Self-employed",
     location: "Remote",
     content:
-      "Designed visual assets and UI layouts for digital products. Built a strong foundation in design systems, branding, and user-focused thinking.",
+      "Created branding materials, digital assets, and UI concepts, building a strong foundation in visual design, user experience, and creative problem-solving.",
   },
 ];

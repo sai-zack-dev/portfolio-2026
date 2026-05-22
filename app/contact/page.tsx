@@ -1,49 +1,78 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { cn } from "@/lib/utils";
 import { Textarea } from "@/components/ui/textarea";
-import { contactFormTitles } from "@/data/titles";
+import { contactTitles } from "@/data/titles";
 import Header from "@/components/common/Header";
 
+type Status = "idle" | "loading" | "success" | "error";
+
 export default function Contact() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const [status, setStatus] = useState<Status>("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("Form submitted");
+    setStatus("loading");
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/xvzyrqlg", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+
+      if (res.ok) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
   return (
     <main className="flex flex-col w-full max-w-4xl items-center justify-center sm:items-start mx-auto mt-14 p-5">
-      <Header
-        title={contactFormTitles.title}
-        description={contactFormTitles.description}
-      />
-      <form className="my-8 flex flex-col gap-5 w-full" onSubmit={handleSubmit}>
-        <LabelInputContainer>
-          <Label htmlFor="name">Name</Label>
-          <Input id="name" placeholder="Enter your name" type="text" />
-        </LabelInputContainer>
-        <LabelInputContainer>
-          <Label htmlFor="email">Email</Label>
-          <Input
-            id="email"
-            placeholder="Enter your email address"
-            type="email"
-          />
-        </LabelInputContainer>
-        <LabelInputContainer>
-          <Label htmlFor="email">Message</Label>
-          <Textarea placeholder="Your message to me..." />
-        </LabelInputContainer>
+      <Header title={contactTitles.title} description={contactTitles.description} />
 
-        <button
-          className="group/btn relative block h-10 w-full rounded-md bg-linear-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] cursor-pointer"
-          type="submit"
-        >
-          Send Message &rarr;
-          <BottomGradient />
-        </button>
-      </form>
+      {status === "success" ? (
+        <div className="my-8 w-full rounded-md border border-green-500/30 bg-green-500/10 p-6 text-center text-green-600 dark:text-green-400">
+          ✓ Message sent! I'll get back to you soon.
+        </div>
+      ) : (
+        <form className="my-8 flex flex-col gap-5 w-full" onSubmit={handleSubmit}>
+          <LabelInputContainer>
+            <Label htmlFor="name">Name</Label>
+            <Input id="name" name="name" placeholder="Enter your name" type="text" required />
+          </LabelInputContainer>
+          <LabelInputContainer>
+            <Label htmlFor="email">Email</Label>
+            <Input id="email" name="email" placeholder="Enter your email address" type="email" required />
+          </LabelInputContainer>
+          <LabelInputContainer>
+            <Label htmlFor="message">Message</Label>
+            <Textarea name="message" placeholder="Your message to me..." required />
+          </LabelInputContainer>
+
+          {status === "error" && (
+            <p className="text-sm text-red-500">Something went wrong. Please try again.</p>
+          )}
+
+          <button
+            className="group/btn relative block h-10 w-full rounded-md bg-linear-to-br from-black to-neutral-600 font-medium text-white shadow-[0px_1px_0px_0px_#ffffff40_inset,0px_-1px_0px_0px_#ffffff40_inset] dark:bg-zinc-800 dark:from-zinc-900 dark:to-zinc-900 dark:shadow-[0px_1px_0px_0px_#27272a_inset,0px_-1px_0px_0px_#27272a_inset] cursor-pointer disabled:opacity-60"
+            type="submit"
+            disabled={status === "loading"}
+          >
+            {status === "loading" ? "Sending…" : <>Send Message &rarr;</>}
+            <BottomGradient />
+          </button>
+        </form>
+      )}
     </main>
   );
 }

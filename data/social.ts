@@ -23,26 +23,16 @@ export const socialLinks: SocialLink[] = [
     href: "https://linkedin.com/in/sai-zay-linn-htet",
     icon: SiLinkedin,
   },
-  // {
-  //   name: "Instagram",
-  //   href: "https://instagram.com/yourusername",
-  //   icon: SiInstagram,
-  // },
   {
     name: "CodePen",
     href: "https://codepen.io/SaiZack",
     icon: SiCodepen,
   },
-  // {
-  //   name: "LeetCode",
-  //   href: "https://leetcode.com/yourusername",
-  //   icon: SiLeetcode,
-  // },
-  // {
-  //   name: "Resume",
-  //   href: "/resume.pdf",
-  //   icon: SiGoogledocs,
-  // },
+  {
+    name: "Resume",
+    href: "/resume.pdf",
+    icon: SiGoogledocs,
+  },
   {
     name: "Behance",
     href: "https://www.behance.net/sai-zack-art",
