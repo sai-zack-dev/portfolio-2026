@@ -7,7 +7,7 @@ export default function TopProjects() {
       title: "Myanmar Handwriting Recognition",
       description:
         "AI-powered deep learning system for recognizing and classifying handwritten Burmese characters with high accuracy.",
-      src: "assets/mm-hw-recognition.png",
+      src: "assets/mm-hw-recognizer.png",
       link: "/projects/mm-hw-recognizer",
     },
     {
@@ -28,7 +28,7 @@ export default function TopProjects() {
       title: "FlatSync",
       description:
         "A comprehensive flatmate and shared room management system designed to streamline communication, task management, and expense tracking.",
-      src: "assets/flatsync.png",
+      src: "assets/flat-sync.png",
       link: "/projects/flat-sync",
     },
   ];

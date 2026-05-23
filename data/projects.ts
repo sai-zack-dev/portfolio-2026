@@ -55,7 +55,7 @@ export const projects: Project[] = [
     category: "AI",
     description:
       "AI-powered deep learning system for recognizing and classifying handwritten Burmese characters.",
-    image: "/assets/mm-hw-recognition.png",
+    image: "/assets/mm-hw-recognizer.png",
     tags: [
       "Python",
       "Deep Learning",
@@ -237,7 +237,7 @@ cp .env.example .env
       "REST API",
     ],
     github: "https://github.com/sai-zack-dev/myanmar-chatbot",
-    image: "/assets/emotion-detector.png",
+    image: "/assets/elyza.png",
     highlights: [
       "Emotion classification across 6 categories (Joy, Sadness, Love, Anger, Fear, Surprise)",
       "Rule-based Burmese NLP response engine",
@@ -378,6 +378,7 @@ curl -X POST http://localhost:5005/chat \\
       "A mobile IDE concept UI design for a full development environment on smartphones.",
     tags: ["UI/UX", "Mobile", "Concept Design", "Figma"],
     behance: "https://www.behance.net/gallery/247812563/Pocket-Dev-Env",
+    image: "/assets/pocket-dev-env.png",
     highlights: [
       "Mobile-first developer experience concept",
       "Full IDE feature set adapted for touch input",
@@ -416,7 +417,7 @@ curl -X POST http://localhost:5005/chat \\
       "House rules and shared notice board",
       "Notification system for due tasks and payments",
     ],
-    image: "/assets/flatsync.png",
+    image: "/assets/flat-sync.png",
     readme: [
       {
         type: "overview",
@@ -444,6 +445,7 @@ curl -X POST http://localhost:5005/chat \\
       "A simple photobooth and social media app design for youthful, playful audiences.",
     tags: ["UI/UX", "Social Media", "Mobile", "Figma"],
     behance: "https://www.behance.net/gallery/247834821/Say-Cheese-",
+    image: "/assets/say-cheese.png",
     highlights: [
       "Photobooth-inspired multi-shot capture UI",
       "Curated filter library with live preview",
@@ -476,6 +478,7 @@ curl -X POST http://localhost:5005/chat \\
     description:
       "A photo cleaning app with a Tinder-style swipe interface for decluttering photo libraries.",
     tags: ["UI/UX", "Mobile", "Concept Design", "Figma"],
+    image: "/assets/easy-clean.png",
     highlights: [
       "Swipe-based keep/delete interaction model",
       "Smart duplicate and burst photo grouping",
@@ -648,6 +651,7 @@ curl -X POST http://localhost:5005/chat \\
       "A fun web app that generates personalized love letters for Valentine's Day 2026.",
     tags: ["JavaScript", "HTML/CSS", "Creative", "Fun", "Netlify"],
     live: "https://valentine-love-letter-2026.netlify.app/",
+    image: "/assets/valentine-letter.png",
     highlights: [
       "Personalized letter generation with custom inputs",
       "Animated, theme-appropriate visual design",
@@ -679,6 +683,7 @@ curl -X POST http://localhost:5005/chat \\
     description:
       "A collection of mini-games built with HTML, CSS, JavaScript, and Scratch.",
     tags: ["JavaScript", "HTML/CSS", "Scratch", "Games", "Educational"],
+    image: "/assets/mini-games.png",
     live: "https://saiz-mini-games-collection.netlify.app/",
     highlights: [
       "Multiple genres: reflex, puzzle, arcade",
