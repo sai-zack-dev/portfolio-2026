@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { projects, getProjectById, getRelatedProjects, categoryStyle } from "@/data/projects";
 import { assetUrl } from "@/lib/assets";
+import { BadgeInfo, Info } from "lucide-react";
 
 // ─── Static Params ────────────────────────────────────────────────────────────
 
@@ -57,7 +58,7 @@ export default async function ProjectDetailPage({
         {/* NDA Warning */}
         {project.nda && project.ndaNote && (
           <div className="flex items-center gap-3 p-3 rounded-xl border border-amber-200 dark:border-amber-800 bg-amber-50 dark:bg-amber-950/20">
-            <span className="text-amber-500 mt-0.5 shrink-0">ℹ</span>
+            <span className="text-amber-500 mt-0.5 shrink-0"><Info /></span>
             <p className="text-sm text-amber-700 dark:text-amber-400">{project.ndaNote}</p>
           </div>
         )}
@@ -288,7 +289,7 @@ export default async function ProjectDetailPage({
           if (section.type === "note") {
             return (
               <div key={i} className="flex items-start gap-3 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50">
-                <span className="text-zinc-400 mt-0.5 shrink-0 text-sm">ℹ</span>
+                <span className="text-zinc-400 mt-0.5 shrink-0 text-sm"><BadgeInfo /></span>
                 <p className="text-sm text-zinc-500 dark:text-zinc-400">{section.content}</p>
               </div>
             );

@@ -39,7 +39,7 @@ const Timeline9 = ({ items, className }: Timeline9Props) => {
               </h5>
 
               <Card className="my-4 border-none shadow-none">
-                <CardContent className="px-0 xl:px-2">
+                <CardContent>
                   <p className="text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
                     {entry.content}
                   </p>
