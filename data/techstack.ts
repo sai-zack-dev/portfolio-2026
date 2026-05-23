@@ -50,10 +50,10 @@ export const techStackTree = {
  * Terminal (Languages Panel)
  */
 export const techStackLanguages = [
-  "✔ PHP [Laravel full-stack development]",
-  "✔ JS/TS [Node.js full-stack development]",
+  "✔ PHP [Laravel Full-stack]",
+  "✔ JS/TS [Next.js, React.js, Node.js]",
   "✔ SQL [DBMS, queries, and optimization]",
-  "✔ Python [Learning DSA and scripting]",
+  "✔ Python [Flask, learning AI/ML, NLP]",
 ];
 
 /**

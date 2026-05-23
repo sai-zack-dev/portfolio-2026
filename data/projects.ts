@@ -34,7 +34,7 @@ export type Project = {
   nda?: boolean;
   ndaNote?: string;
   highlights: string[];
-  images?: string[];
+  image?: string;
   readme: ReadmeSection[];
 };
 
@@ -55,7 +55,7 @@ export const projects: Project[] = [
     category: "AI",
     description:
       "AI-powered deep learning system for recognizing and classifying handwritten Burmese characters.",
-    images: ["/assets/mm-hw-recognition.png"],
+    image: "/assets/mm-hw-recognition.png",
     tags: [
       "Python",
       "Deep Learning",
@@ -67,14 +67,14 @@ export const projects: Project[] = [
     highlights: [
       "Custom CNN trained on Burmese handwriting dataset",
       "Handles complex script variations and ligatures",
-      "Preprocessing pipeline for real-world noisy images",
+      "Preprocessing pipeline for real-world noisy image",
       "Exportable inference API for downstream integration",
     ],
     readme: [
       {
         type: "overview",
         content:
-          "An end-to-end deep learning pipeline for recognizing handwritten Burmese script - one of the most complex writing systems in Southeast Asia. Addresses the significant lack of high-quality tooling for Burmese character recognition by training a CNN on a purpose-built dataset. The system handles multi-class character classification with preprocessing for noisy real-world images.",
+          "An end-to-end deep learning pipeline for recognizing handwritten Burmese script - one of the most complex writing systems in Southeast Asia. Addresses the significant lack of high-quality tooling for Burmese character recognition by training a CNN on a purpose-built dataset. The system handles multi-class character classification with preprocessing for noisy real-world image.",
       },
       {
         type: "features",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     github:
       "https://github.com/sai-zack-dev/query-based-intelligence-visualization",
     live: "https://qbiv.netlify.app/",
-    images: ["/assets/qbiv.png"],
+    image: "/assets/qbiv.png",
     highlights: [
       "Natural language to SQL via Groq API (AI Query Builder)",
       "Form-based SQL builder - no code required",
@@ -237,7 +237,7 @@ cp .env.example .env
       "REST API",
     ],
     github: "https://github.com/sai-zack-dev/myanmar-chatbot",
-    images: ["/assets/emotion-detector.png"],
+    image: "/assets/emotion-detector.png",
     highlights: [
       "Emotion classification across 6 categories (Joy, Sadness, Love, Anger, Fear, Surprise)",
       "Rule-based Burmese NLP response engine",
@@ -347,7 +347,7 @@ curl -X POST http://localhost:5005/chat \\
     description:
       "A data collection tool for gathering high-quality handwritten Burmese character samples for ML training.",
     tags: ["Python", "Dataset", "ML Pipeline", "Burmese", "Data Collection"],
-    images: ["/assets/mm-hw-collector.png"],
+    image: "/assets/mm-hw-collector.png",
 
     highlights: [
       "Structured character annotation interface",
@@ -416,7 +416,7 @@ curl -X POST http://localhost:5005/chat \\
       "House rules and shared notice board",
       "Notification system for due tasks and payments",
     ],
-    images: ["/assets/flatsync.png"],
+    image: "/assets/flatsync.png",
     readme: [
       {
         type: "overview",
@@ -717,7 +717,7 @@ curl -X POST http://localhost:5005/chat \\
     tags: ["CLI", "Node.js", "Next.js", "Nuxt.js", "npm", "Developer Tools"],
     github: "https://github.com/sai-zack-dev/nezt",
     npm: "https://www.npmjs.com/package/nezt-cli",
-    images: ["/assets/nezt.png"],
+    image: "/assets/nezt.png",
     highlights: [
       "Interactive CLI prompts for project configuration",
       "Pre-built page templates (Home, About, Blog, Contact, Pricing, Custom)",

@@ -1,7 +1,6 @@
 "use client";
 import Header from "@/components/common/Header";
 import Carousel from "@/components/ui/carousel";
-
 export default function TopProjects() {
   const slideData = [
     {
@@ -35,7 +34,7 @@ export default function TopProjects() {
   ];
 
   return (
-    <main className="flex min-h-screen w-full sm:items-start py-24 flex-col">
+    <main className="flex min-h-screen w-full sm:items-start py-24 flex-col overflow-hidden">
       <div className="w-full h-full p-5 max-w-4xl mx-auto">
         <Header
           title="Featured_Projects"
@@ -43,7 +42,7 @@ export default function TopProjects() {
           prefix="#"
         />
       </div>
-      <div className="relative w-full h-full px-5">
+      <div className="relative w-full h-full">
         <Carousel slides={slideData} />
       </div>
     </main>

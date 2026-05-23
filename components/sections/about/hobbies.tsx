@@ -85,17 +85,17 @@ export default function Hobbies() {
         description="Here is my hobbies and interests outside of coding and technology."
       />
 
-      <div className="relative flex justify-center w-full mt-50 mb-10">
+      <div className="relative flex justify-center w-full mt-40 mb-10 mx-auto">
         <Folder
-          size={2}
+          size={1.5}
           color="#008CFA"
           className="custom-folder"
           items={items}
         />
-        <p className="text-white absolute -bottom-25 text-lg">
+        <p className="text-black dark:text-white absolute -bottom-15 text-lg">
           Personal Hobbies
         </p>
-        <p className="absolute -bottom-30 text-sm text-blue-400">
+        <p className="absolute -bottom-20 text-sm text-blue-400">
           3 items
         </p>
       </div>

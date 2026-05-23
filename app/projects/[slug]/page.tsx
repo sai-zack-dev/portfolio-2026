@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { projects, getProjectById, getRelatedProjects, categoryStyle } from "@/data/projects";
+import { assetUrl } from "@/lib/assets";
 
 // ─── Static Params ────────────────────────────────────────────────────────────
 
@@ -101,31 +102,16 @@ export default async function ProjectDetailPage({
           ))}
         </div>
 
-        {/* ── Preview Images ─────────────────────────────────────────────────── */}
-        {project.images && project.images.length > 0 && (
-          <div
-            className={`grid gap-3 ${project.images.length === 1 ? "grid-cols-1" : "grid-cols-2"
-              }`}
-          >
-            {project.images.slice(0, 2).map((src, i) => (
-              <div
-                key={i}
-                className="relative w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900"
-                style={{ aspectRatio: project.images!.length === 1 ? "16/9" : "4/3" }}
-              >
-                <Image
-                  src={src}
-                  alt={`${project.title} preview ${i + 1}`}
-                  fill
-                  className="object-fill transition-transform duration-500 hover:scale-[1.02]"
-                  sizes={
-                    project.images!.length === 1
-                      ? "(max-width: 768px) 100vw, 672px"
-                      : "(max-width: 768px) 50vw, 328px"
-                  }
-                />
-              </div>
-            ))}
+        {/* ── Preview Image ──────────────────────────────────────────────────── */}
+        {project.image && (
+          <div className="relative w-full overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-zinc-100 dark:bg-zinc-900">
+            <Image
+              src={assetUrl(project.image)}
+              alt={`${project.title} preview`}
+              className="transition-transform duration-500 hover:scale-[1.02]"
+              width={800}
+              height={400}
+            />
           </div>
         )}
 
@@ -319,7 +305,6 @@ export default async function ProjectDetailPage({
             <Section label="Related Projects">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {related.map((rel) => {
-                  // Count shared tags for the label
                   const sharedTags = rel.tags.filter((t) => project.tags.includes(t));
                   const reasonLabel =
                     rel.category === project.category
@@ -332,7 +317,6 @@ export default async function ProjectDetailPage({
                       href={`/projects/${rel.id}`}
                       className="group flex flex-col gap-3 p-4 rounded-xl border border-zinc-200 dark:border-zinc-800 hover:border-zinc-400 dark:hover:border-zinc-600 hover:bg-white dark:hover:bg-zinc-900 transition-all"
                     >
-                      {/* Category chip + reason */}
                       <div className="flex items-center justify-between gap-2">
                         <span
                           className={`text-[10px] font-mono uppercase tracking-widest px-2 py-0.5 rounded-full border ${categoryStyle[rel.category]}`}
@@ -344,7 +328,6 @@ export default async function ProjectDetailPage({
                         </span>
                       </div>
 
-                      {/* Title */}
                       <div>
                         <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-snug group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors">
                           {rel.title}
@@ -356,12 +339,10 @@ export default async function ProjectDetailPage({
                         )}
                       </div>
 
-                      {/* Description */}
                       <p className="text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-2">
                         {rel.description}
                       </p>
 
-                      {/* Arrow */}
                       <span className="text-xs font-mono text-zinc-400 dark:text-zinc-600 group-hover:text-zinc-700 dark:group-hover:text-zinc-300 transition-colors mt-auto">
                         View project →
                       </span>

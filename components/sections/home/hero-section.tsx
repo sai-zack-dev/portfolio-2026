@@ -46,12 +46,14 @@ export default function HeroSection() {
             >
               {" "}
               <SiGithub />
-              Github Profile{" "}
+              Github 
+              <span className="ml-1 hidden sm:inline">Profile</span>
             </a>
           </Button>
           <Link href={"/projects"}>
             <InteractiveHoverButton className="cursor-pointer text-xs md:text-base">
-              View Projects
+              <span className="ml-1 hidden sm:inline">View</span>
+              Projects
             </InteractiveHoverButton>
           </Link>
         </div>

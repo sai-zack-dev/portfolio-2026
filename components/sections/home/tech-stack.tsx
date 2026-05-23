@@ -26,11 +26,11 @@ export default function TechStack() {
           prefix="#"
         />
 
-        <div className="grid md:grid-cols-2 w-full gap-5 py-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 w-full gap-5 py-5">
           {/* File Tree */}
-          <div className="bg-violet-100 rounded-2xl row-span-2">
+          <div className="bg-violet-100 rounded-2xl md:row-span-2 relative overflow-hidden">
             <Tree
-              className="overflow-hidden bg-background p-2 z-0 h-full w-full rounded-xl border"
+              className="overflow-hidden bg-background p-2 z-0 w-full rounded-xl border"
               initialSelectedId={techStackTree.initialSelectedId}
               initialExpandedItems={techStackTree.initialExpandedItems}
             >
@@ -102,7 +102,7 @@ export default function TechStack() {
               {techStackLanguages.map((line, index) => (
                 <AnimatedSpan
                   key={index}
-                  className="text-green-500"
+                  className="text-green-500 text-wrap text-sm whitespace-pre-wrap"
                 >
                   {line}
                 </AnimatedSpan>

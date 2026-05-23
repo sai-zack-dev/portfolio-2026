@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
 import { ThemeProvider } from "@/components/provider/theme-provider";
 import { Nav } from "@/components/common/Nav";
 import React from "react";
 import Footer from "@/components/common/Footer";
+import { assetUrl } from "@/lib/assets";
+// @ts-expect-error: CSS module declarations
+import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,7 +21,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sai Zack | Portfolio",
   icons: {
-    icon: "/favicon.svg",
+    icon: assetUrl("/favicon.svg"),
   },
 };
 
@@ -29,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="scroll-smooth overflow-x-hidden">
       <body
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden font-mono`}

@@ -3,7 +3,7 @@ import {
   SiLinkedin,
   SiCodepen,
   SiGoogledocs,
-  SiBehance
+  SiBehance,
 } from "react-icons/si";
 
 export interface SocialLink {
@@ -24,14 +24,14 @@ export const socialLinks: SocialLink[] = [
     icon: SiLinkedin,
   },
   {
-    name: "CodePen",
-    href: "https://codepen.io/SaiZack",
-    icon: SiCodepen,
-  },
-  {
     name: "Resume",
     href: "/resume.pdf",
     icon: SiGoogledocs,
+  },
+  {
+    name: "CodePen",
+    href: "https://codepen.io/SaiZack",
+    icon: SiCodepen,
   },
   {
     name: "Behance",

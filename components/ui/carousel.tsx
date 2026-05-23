@@ -1,9 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { IconArrowNarrowRight } from "@tabler/icons-react";
 import { useState, useRef, useId, useEffect } from "react";
 import { InteractiveHoverButton } from "./interactive-hover-button";
 import Link from "next/link";
+import Image from "next/image";
+import { assetUrl } from "@/lib/assets";
 
 interface SlideData {
   title: string;
@@ -95,16 +96,18 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
           }}
         >
 
-          <img
-            className="absolute inset-0 w-full h-full object-fit opacity-100 transition-opacity duration-600 ease-in-out"
+          <Image
+            className="absolute inset-0 w-full h-full object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{
               opacity: current === index ? 1 : 0.5,
             }}
             alt={title}
-            src={src}
+            src={assetUrl(src)}
             onLoad={imageLoaded}
             loading="eager"
             decoding="sync"
+            width={800}
+            height={400}
           />
           {current === index && (
             <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
