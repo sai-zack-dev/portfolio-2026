@@ -161,9 +161,9 @@ const phases: JourneyPhase[] = [
       {
         title: "BSc (Hons) Cybersecurity & Networks",
         org: "Teesside University — MDIS Campus, Singapore",
-        period: "2024 – 2026",
+        period: "2024 – 2025 · Graduated 2026",
         description:
-          "Deepened technical expertise in cybersecurity and enterprise network management. Year 2 emphasised system security and infrastructure administration, while Year 3 expanded into advanced network defence, governance and enterprise-level management.",
+          "Deepened technical expertise in cybersecurity and enterprise network management. Year 2 emphasised system security and infrastructure administration, while Year 3 expanded into advanced network defence, governance and enterprise-level management. Coursework ran to 2025, with the degree conferred in 2026.",
       },
       {
         title: "Security-First Engineering",

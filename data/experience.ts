@@ -16,12 +16,12 @@ export const experiences: ExperienceItem[] = [
       "Delivering full-stack web applications with focus on scalable architecture, modern UI/UX, and end-to-end product development using React, Next.js, Node.js, and Laravel ecosystems, while self-learning AI/ML alongside client work.",
   },
   {
-    date: "2024 – 2026",
+    date: "2024 – 2025",
     title: "BSc (Hons) Cybersecurity & Networks",
     company: "Teesside University — MDIS Campus",
     location: "Singapore",
     content:
-      "Studied full-time for my bachelor's degree, deepening technical expertise in cybersecurity and enterprise network management across system security, infrastructure administration, advanced network defence and governance.",
+      "Studied full-time for my bachelor's degree, deepening technical expertise in cybersecurity and enterprise network management across system security, infrastructure administration, advanced network defence and governance. Degree conferred in 2026.",
   },
   {
     date: "2022 – 2024",
