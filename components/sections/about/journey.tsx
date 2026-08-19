@@ -67,13 +67,20 @@ const phases: JourneyPhase[] = [
     title: "2020 – 2022",
     heading: "Exploration",
     intro:
-      "Transitioned into design and frontend development through self-study during the pandemic era.",
+      "Turned design into paid work while teaching myself frontend development during the pandemic era.",
     entries: [
       {
-        title: "Self-Directed Study — Design & Frontend Development",
+        title: "Graphic Designer (Freelance)",
+        org: "Self-employed — Remote",
+        period: "Before 2022",
+        description:
+          "Created branding materials, digital assets and UI concepts for clients, building a strong foundation in visual design, user experience and creative problem-solving.",
+      },
+      {
+        title: "Self-Directed Study — Frontend Development",
         period: "2020 – 2022",
         description:
-          "Spent countless hours exploring UI/UX design, graphic design, and modern web technologies while building personal projects and experimenting with creative interfaces.",
+          "Spent countless hours exploring UI/UX design and modern web technologies while building personal projects and experimenting with creative interfaces.",
       },
       {
         title: "Finding a Direction",
@@ -126,10 +133,11 @@ const phases: JourneyPhase[] = [
           "Studied part-time while working full-time as a software engineer. The diploma offered comprehensive training in system design, programming and networking, strengthening the analytical thinking and problem-solving needed in dynamic IT environments.",
       },
       {
-        title: "Full-Time Software Engineering",
+        title: "Full-stack Software Engineer",
+        org: "Myanmar Software Integrated Solutions (MSIS) — Yangon, Myanmar",
         period: "2022 – 2024",
         description:
-          "Built real-world applications, collaborated on production systems, and gained hands-on experience in backend development, APIs, server management and scalable architecture — bridging academic learning with practical engineering.",
+          "Developed enterprise-grade web platforms using Laravel, React and REST APIs, contributing to systems serving 500+ users while handling frontend, backend, deployment and production maintenance — bridging academic learning with practical engineering.",
       },
     ],
     skills: [
@@ -153,7 +161,7 @@ const phases: JourneyPhase[] = [
       {
         title: "BSc (Hons) Cybersecurity & Networks",
         org: "Teesside University — MDIS Campus, Singapore",
-        period: "2024 – 2025",
+        period: "2024 – 2026",
         description:
           "Deepened technical expertise in cybersecurity and enterprise network management. Year 2 emphasised system security and infrastructure administration, while Year 3 expanded into advanced network defence, governance and enterprise-level management.",
       },
@@ -176,29 +184,33 @@ const phases: JourneyPhase[] = [
 
   {
     title: "Now",
-    heading: "AI/ML Focus",
+    heading: "Freelance & AI/ML",
     intro:
-      "Currently focused on AI/ML and intelligent systems development.",
+      "Working as a freelance full-stack developer while self-learning AI/ML on the side.",
     entries: [
       {
-        title: "Building Intelligent Systems",
+        title: "Software Developer (Freelance)",
+        org: "Self-employed — Remote",
+        period: "Present",
         description:
-          "Combining software engineering, system architecture and cybersecurity foundations with modern AI technologies to build scalable, intelligent and resilient products.",
+          "Delivering full-stack web applications with a focus on scalable architecture, modern UI/UX and end-to-end product development using React, Next.js, Node.js and Laravel ecosystems.",
       },
       {
-        title: "Areas of Exploration",
+        title: "Self-Learning AI/ML",
+        period: "Ongoing",
         description:
-          "Exploring AI applications, intelligent automation, anomaly detection systems, and human-centered software design.",
+          "Combining software engineering, system architecture and cybersecurity foundations with modern AI technologies — exploring AI applications, intelligent automation, anomaly detection systems and human-centered software design.",
       },
     ],
     skills: [
-      "Artificial Intelligence",
-      "Machine Learning",
-      "Intelligent Systems",
-      "Automation",
-      "Natural Language Processing",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Laravel",
       "Full Stack Engineering",
       "System Design",
+      "Artificial Intelligence",
+      "Machine Learning",
     ],
   },
 ];
