@@ -19,6 +19,9 @@ export const Ripple = React.memo(function Ripple({
     <div
       className={cn(
         "pointer-events-none absolute inset-0 mask-[linear-gradient(to_bottom,white,transparent)] select-none",
+        // Lets the browser skip this subtree's rendering work entirely while
+        // it is scrolled out of view.
+        "[content-visibility:auto]",
         className
       )}
       {...props}
@@ -32,7 +35,7 @@ export const Ripple = React.memo(function Ripple({
         return (
           <div
             key={i}
-            className={`animate-ripple bg-foreground/25 absolute rounded-full border shadow-xl`}
+            className={`animate-ripple bg-foreground/25 absolute rounded-full border motion-reduce:animate-none`}
             style={
               {
                 "--i": i,
@@ -46,6 +49,7 @@ export const Ripple = React.memo(function Ripple({
                 top: "50%",
                 left: "50%",
                 transform: "translate(-50%, -50%) scale(1)",
+                willChange: "transform",
               } as CSSProperties
             }
           />

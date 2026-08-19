@@ -1,6 +1,4 @@
-"use client"
-
-import React, { useState } from "react"
+import React from "react"
 
 import { cn } from "@/lib/utils"
 
@@ -24,6 +22,10 @@ interface InteractiveGridPatternProps extends React.SVGProps<SVGSVGElement> {
 /**
  * The InteractiveGridPattern component.
  *
+ * Hover is handled entirely in CSS. Driving it from React state meant every
+ * pointer move re-rendered all of the squares, and it shipped a listener pair
+ * per square to devices that cannot hover at all.
+ *
  * @see InteractiveGridPatternProps for the props interface.
  * @returns A React component.
  */
@@ -36,12 +38,12 @@ export function InteractiveGridPattern({
   ...props
 }: InteractiveGridPatternProps) {
   const [horizontal, vertical] = squares
-  const [hoveredSquare, setHoveredSquare] = useState<number | null>(null)
 
   return (
     <svg
       width={width * horizontal}
       height={height * vertical}
+      aria-hidden="true"
       className={cn(
         "absolute inset-0 h-full w-full border border-gray-400/30",
         className
@@ -59,12 +61,10 @@ export function InteractiveGridPattern({
             width={width}
             height={height}
             className={cn(
-              "stroke-gray-400/30 transition-all duration-100 ease-in-out [&:not(:hover)]:duration-1000",
-              hoveredSquare === index ? "fill-gray-300/30" : "fill-transparent",
+              "fill-transparent stroke-gray-400/30 transition-[fill] duration-100 ease-in-out [&:not(:hover)]:duration-1000",
+              "hover:fill-gray-300/30",
               squaresClassName
             )}
-            onMouseEnter={() => setHoveredSquare(index)}
-            onMouseLeave={() => setHoveredSquare(null)}
           />
         )
       })}

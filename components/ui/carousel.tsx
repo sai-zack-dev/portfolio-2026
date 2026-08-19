@@ -23,45 +23,39 @@ interface SlideProps {
 const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
   const slideRef = useRef<HTMLLIElement>(null);
 
-  const xRef = useRef(0);
-  const yRef = useRef(0);
-  const frameRef = useRef<number>(undefined);
+  const frameRef = useRef<number | undefined>(undefined);
 
-  useEffect(() => {
-    const animate = () => {
-      if (!slideRef.current) return;
-
-      const x = xRef.current;
-      const y = yRef.current;
-
-      slideRef.current.style.setProperty("--x", `${x}px`);
-      slideRef.current.style.setProperty("--y", `${y}px`);
-
-      frameRef.current = requestAnimationFrame(animate);
-    };
-
-    frameRef.current = requestAnimationFrame(animate);
-
-    return () => {
-      if (frameRef.current) {
-        cancelAnimationFrame(frameRef.current);
-      }
-    };
-  }, []);
+  const applyOffset = (x: number, y: number) => {
+    if (frameRef.current) return;
+    frameRef.current = requestAnimationFrame(() => {
+      frameRef.current = undefined;
+      const el = slideRef.current;
+      if (!el) return;
+      el.style.setProperty("--x", `${x}px`);
+      el.style.setProperty("--y", `${y}px`);
+    });
+  };
 
   const handleMouseMove = (event: React.MouseEvent) => {
     const el = slideRef.current;
     if (!el) return;
 
     const r = el.getBoundingClientRect();
-    xRef.current = event.clientX - (r.left + Math.floor(r.width / 2));
-    yRef.current = event.clientY - (r.top + Math.floor(r.height / 2));
+    applyOffset(
+      event.clientX - (r.left + Math.floor(r.width / 2)),
+      event.clientY - (r.top + Math.floor(r.height / 2))
+    );
   };
 
   const handleMouseLeave = () => {
-    xRef.current = 0;
-    yRef.current = 0;
+    applyOffset(0, 0);
   };
+
+  useEffect(() => {
+    return () => {
+      if (frameRef.current) cancelAnimationFrame(frameRef.current);
+    };
+  }, []);
 
   const imageLoaded = (event: React.SyntheticEvent<HTMLImageElement>) => {
     event.currentTarget.style.opacity = "1";
@@ -104,10 +98,16 @@ const Slide = ({ slide, index, current, handleSlideClick }: SlideProps) => {
             alt={title}
             src={assetUrl(src)}
             onLoad={imageLoaded}
+            // Every slide loads so that advancing the carousel never pops in,
+            // but only the visible one competes for bandwidth up front. The
+            // rest are fetched at low priority once the critical path is done.
+            // decoding="async" keeps the decode off the main thread either way.
             loading="eager"
-            decoding="sync"
-            width={800}
-            height={400}
+            fetchPriority={index === 0 ? "high" : "low"}
+            decoding="async"
+            sizes="(max-width: 768px) 90vw, 105vmin"
+            width={1200}
+            height={600}
           />
           {current === index && (
             <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />

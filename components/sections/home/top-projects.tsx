@@ -7,28 +7,28 @@ export default function TopProjects() {
       title: "Myanmar Handwriting Recognition",
       description:
         "AI-powered deep learning system for recognizing and classifying handwritten Burmese characters with high accuracy.",
-      src: "assets/mm-hw-recognizer.png",
+      src: "assets/mm-hw-recognizer.webp",
       link: "/projects/mm-hw-recognizer",
     },
     {
       title: "Query Based Intelligence Visualization",
       description:
         "Interactive platform that transforms complex query data into meaningful visual insights via dynamic dashboards.",
-      src: "assets/qbiv.png",
+      src: "assets/qbiv.webp",
       link: "/projects/qbiv",
     },
     {
       title: "NEZT CLI",
       description:
         "A command-line tool for creating fully scaffolded Next.js and Nuxt.js projects with pre-built pages, themes, and optional dynamic features.",
-      src: "assets/nezt.png",
+      src: "assets/nezt.webp",
       link: "/projects/nezt",
     },
     {
       title: "FlatSync",
       description:
         "A comprehensive flatmate and shared room management system designed to streamline communication, task management, and expense tracking.",
-      src: "assets/flat-sync.png",
+      src: "assets/flat-sync.webp",
       link: "/projects/flat-sync",
     },
   ];
